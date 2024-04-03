@@ -12,20 +12,33 @@
   .image-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    padding: 0 20px; /* Добавляем отступы по краям */
+    max-width: 1000px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер на странице */
   }
   .image-item {
     margin: 10px;
     text-align: center;
-    width: 150px; /* Ширина элементов */
+    width: calc(20% - 20px); /* Пять столбиков в ширину */
+    max-width: 150px; /* Максимальная ширина элемента */
   }
   .image-item img {
     width: 100%; /* Заполнить всю доступную ширину */
     height: auto; /* Автоматически определять высоту */
     max-height: 150px; /* Максимальная высота изображений */
   }
+  div {
+    display: block;
+  }
   .hidden {
     display: none; /* Скрываем элементы по умолчанию */
+  }
+  /* Медиа-запрос для мобильных устройств */
+  @media screen and (max-width: 767px) {
+    .image-item {
+      width: calc(50% - 20px); /* Два столбика в ширину */
+    }
   }
 </style>
 </head>
