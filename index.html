@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oha Flowers</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oha Flowers</title>
 
-    <style>
-      body {
-        font-size: 10px; /* Устанавливаем базовый размер шрифта для всего документа */
-    }
-      .image-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .image-item {
-        margin: 10px;
-        text-align: center;
-        width: 150px; /* Ширина элементов */
-      }
-      .image-item img {
-        width: 100%; /* Заполнить всю доступную ширину */
-        height: auto; /* Автоматически определять высоту */
-        max-height: 150px; /* Максимальная высота изображений */
-      }
-      div {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
+<style>
+  body {
+    font-size: 10px; /* Устанавливаем базовый размер шрифта для всего документа */
+  }
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image-item {
+    margin: 10px;
+    text-align: center;
+    width: 150px; /* Ширина элементов */
+  }
+  .image-item img {
+    width: 100%; /* Заполнить всю доступную ширину */
+    height: auto; /* Автоматически определять высоту */
+    max-height: 150px; /* Максимальная высота изображений */
+  }
+  .hidden {
+    display: none; /* Скрываем элементы по умолчанию */
+  }
+</style>
+</head>
+<body>
 
-    <div class="image-container">
-      <div class="image-item">
+<div class="image-container">
+    <div class="image-item">
         <img src="img1.jpg" alt="Изображение 1" />
         <br />
         <span>В наличии:</span>
         <input
           type="checkbox"
           class="checkbox"
-          onchange="duplicateImage(this)"
+          onchange="toggleDuplicate(this)"
         />
         <br />
         <strong>Кустовая роза, пудровая</strong>
@@ -54,242 +54,239 @@
         <input
           type="checkbox"
           class="checkbox"
-          onchange="duplicateImage(this)"
+          onchange="toggleDuplicate(this)"
         />
         <br />
         <strong>Кустовая роза, красная</strong>
         <br />
         <span>95 тл/ветка</span>
       </div>
-      <div class="image-container">
-        <div class="image-item">
-          <img src="img3.jpg" alt="Изображение 1" />
-          <br />
-          <span>В наличии:</span>
-          <input
-            type="checkbox"
-            class="checkbox"
-            onchange="duplicateImage(this)"
-          />
-          <br />
-          <strong>Кустовая роза, малиновая</strong>
-          <br />
-          <span>95 тл/ветка</span>
-        </div>
-        <div class="image-item">
-          <img src="img4.JPG" alt="Изображение 2" />
-          <br />
-          <span>В наличии:</span>
-          <input
-            type="checkbox"
-            class="checkbox"
-            onchange="duplicateImage(this)"
-          />
-          <br />
-          <strong>Роза Кантри Блюз</strong>
-          <br />
-          <span>180 тл/шт</span>
-        </div>
-        <div class="image-container">
-            <div class="image-item">
-              <img src="img5.JPG" alt="Изображение 1" />
-              <br />
-              <span>В наличии:</span>
-              <input
-                type="checkbox"
-                class="checkbox"
-                onchange="duplicateImage(this)"
-              />
-              <br />
-              <strong>Фрезия КОРОТКАЯ</strong>
-              <br />
-              <span>20 тл/шт</span>
-            </div>
-            <div class="image-item">
-              <img src="img6.JPG" alt="Изображение 2" />
-              <br />
-              <span>В наличии:</span>
-              <input
-                type="checkbox"
-                class="checkbox"
-                onchange="duplicateImage(this)"
-              />
-              <br />
-              <strong>Фрезия ДЛИННАЯ</strong>
-              <br />
-              <span>35 тл/шт</span>
-            </div>
-            <div class="image-item">
-                <img src="img7.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Кустовая хризантема сантини баунсер, ромашковидная</strong>
-                <br />
-                <span>70 тл/шт</span>
-              </div>
-              <div class="image-item">
-                <img src="img8.JPG" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Кустовая роза, кремовая</strong>
-                <br />
-                <span>95 тл/веточка</span>
-              </div>
 
-              <div class="image-item">
-                <img src="img9.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Диантус (гвоздика), Peach Pink</strong>
-                <br />
-                <span>45 тл/шт</span>
-              </div>
-              <div class="image-item">
-                <img src="img10.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Роза Эквадор Палома</strong>
-                <br />
-                <span>180 тл/шт</span>
-              </div>
-              <div class="image-item">
-                <img src="img11.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Тюльпан белый</strong>
-                <br />
-                <span>95 тл/шт</span>
-              </div>
-              <div class="image-item">
-                <img src="img12.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Тюльпан бахромчатый Неглиже</strong>
-                <br />
-                <span>95 тл/шт</span>
-              </div>
-              <div class="image-item">
-                <img src="img13.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Кустовая роза, розовая</strong>
-                <br />
-                <span>95 тл/шт</span>
-              </div>
-              <div class="image-item">
-                <img src="img14.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Кустовая роза Розанелла, кремовая</strong>
-                <br />
-                <span>95 тл/шт</span>
-              </div>
-              <div class="image-item">
-                <img src="img15.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Ранункулюс Хот Пинк</strong>
-                <br />
-                <span>240 тл/веточка</span>
-              </div>
-              <div class="image-item">
-                <img src="img16.jpg" alt="Изображение 2" />
-                <br />
-                <span>В наличии:</span>
-                <input
-                  type="checkbox"
-                  class="checkbox"
-                  onchange="duplicateImage(this)"
-                />
-                <br />
-                <strong>Вибурнум</strong>
-                <br />
-                <span>150 тл/веточка</span>
-              </div>
-      <!-- Добавьте другие изображения по аналогии -->
-    </div>
+      <div class="image-item">
+        <img src="img3.jpg" alt="Изображение 3" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Кустовая роза, малиновая</strong>
+        <br />
+        <span>95 тл/ветка</span>
+      </div>
+      <div class="image-item">
+        <img src="img4.JPG" alt="Изображение 4" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Роза Кантри Блюз</strong>
+        <br />
+        <span>180 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img5.JPG" alt="Изображение 5" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Фрезия КОРОТКАЯ</strong>
+        <br />
+        <span>20 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img6.JPG" alt="Изображение 6" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Фрезия ДЛИННАЯ</strong>
+        <br />
+        <span>35 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img7.jpg" alt="Изображение 7" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Кустовая хризантема сантини баунсер, ромашковидная</strong>
+        <br />
+        <span>70 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img8.JPG" alt="Изображение 8" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Кустовая роза, кремовая</strong>
+        <br />
+        <span>95 тл/веточка</span>
+      </div>
+      <div class="image-item">
+        <img src="img9.jpg" alt="Изображение 9" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Диантус (гвоздика), Peach Pink</strong>
+        <br />
+        <span>45 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img10.jpg" alt="Изображение 10" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Роза Эквадор Палома</strong>
+        <br />
+        <span>180 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img11.jpg" alt="Изображение 11" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Тюльпан белый</strong>
+        <br />
+        <span>95 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img12.jpg" alt="Изображение 12" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Тюльпан бахромчатый Неглиже</strong>
+        <br />
+        <span>95 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img13.jpg" alt="Изображение 13" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Кустовая роза, розовая</strong>
+        <br />
+        <span>95 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img14.jpg" alt="Изображение 14" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Кустовая роза Розанелла, кремовая</strong>
+        <br />
+        <span>95 тл/шт</span>
+      </div>
+      <div class="image-item">
+        <img src="img15.jpg" alt="Изображение 15" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Ранункулюс Хот Пинк</strong>
+        <br />
+        <span>240 тл/веточка</span>
+      </div>
+      <div class="image-item">
+        <img src="img16.jpg" alt="Изображение 16" />
+        <br />
+        <span>В наличии:</span>
+        <input
+          type="checkbox"
+          class="checkbox"
+          onchange="toggleDuplicate(this)"
+        />
+        <br />
+        <strong>Вибурнум</strong>
+        <br />
+        <span>150 тл/веточка</span>
+      </div>
+</div>
 
-    <div id="duplicates" class="image-container">
-      <!-- Дубликаты будут добавлены здесь -->
-    </div>
+<div id="duplicates" class="image-container">
+  <!-- Дубликаты будут добавлены здесь -->
+</div>
 
-    <script>
-      function duplicateImage(checkbox) {
-        if (checkbox.checked) {
-          var imageItem = checkbox.parentNode.cloneNode(true); // Клонируем элемент-родитель чекбокса
-          imageItem.classList.add("duplicate-item"); // Добавляем класс, чтобы отличить от оригинального элемента
-          imageItem.querySelector(".checkbox").remove();
-          imageItem.querySelectorAll('span').forEach(function(span) {
-            span.remove(); // Удаляем все элементы <span>
-        });
-          document.getElementById("duplicates").appendChild(imageItem); // Добавляем клонированный элемент внизу
-        } else {
-          var originalItem = checkbox.parentNode; // Определяем исходный элемент
-          var duplicateItem = document
-            .getElementById("duplicates")
-            .querySelector(".duplicate-item"); // Находим клон по классу
-          if (duplicateItem) {
-            duplicateItem.parentNode.removeChild(duplicateItem); // Удаляем только клон, если он существует
-          }
-        }
-      }
+<script>
+  const originals = document.querySelectorAll('.image-item');
+  const duplicatesContainer = document.getElementById('duplicates');
 
+  // Создаем копии родительских элементов и скрываем их
+  originals.forEach(original => {
+    const duplicate = original.cloneNode(true);
+    duplicate.classList.add('duplicate-item', 'hidden');
+    duplicate.querySelector('input[type="checkbox"]').remove(); // Удаляем чекбокс из копии
+    duplicate.querySelectorAll('span').forEach(span => span.remove()); // Удаляем все элементы <span>
+    duplicatesContainer.appendChild(duplicate);
+  });
 
+  function toggleDuplicate(checkbox) {
+    const originalIndex = Array.from(originals).indexOf(checkbox.parentNode);
+    const duplicateItem = duplicatesContainer.children[originalIndex];
 
-    </script>
-  </body>
+    if (checkbox.checked) {
+      duplicateItem.classList.remove('hidden'); // Показываем копию элемента
+    } else {
+      duplicateItem.classList.add('hidden'); // Скрываем копию элемента
+    }
+  }
+</script>
+</body>
 </html>
