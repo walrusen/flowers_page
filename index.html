@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дублирование изображений</title>
+<style>
+body {
+        font-size: 12px; /* Устанавливаем базовый размер шрифта для всего документа */
+    }
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .image-item {
+        margin: 10px;
+        text-align: center;
+        width: 150px; /* Ширина элементов */
+    }
+    .image-item img {
+        width: 100%; /* Заполнить всю доступную ширину */
+        height: auto; /* Автоматически определять высоту */
+        max-height: 150px; /* Максимальная высота изображений */
+    }
+</style>
+</head>
+<body>
+<div class="image-container">
+    <div class="image-item">
+        <img src="C:\Users\dgoni\Desktop\photo1.jpg" alt="Изображение 1">
+        <br>
+	<span>Наличие:</span> <!-- Добавляем текст "Наличие" -->
+
+        <input type="checkbox" class="checkbox" onchange="duplicateImage(this)">
+<br>
+        <strong>Тюльпан красный</strong>
+<br>
+        <span>Цена закупочная: 75 TL</span> <!-- Добавляем текст "Цена" -->
+        <br>
+        
+    </div>
+    <div class="image-item">
+               <img src="C:\Users\dgoni\Desktop\photo2.jpg" alt="Изображение 1">
+        <br>
+	<span>Наличие:	</span> <!-- Добавляем текст "Наличие" -->
+
+        <input type="checkbox" class="checkbox" onchange="duplicateImage(this)">
+<br>
+        <strong>Тюльпан белый</strong>
+
+<br>
+        <span>Цена закупочная: 75 TL</span> <!-- Добавляем текст "Цена" -->
+        <br>
+        
+    </div>
+    <!-- Добавьте другие изображения по аналогии -->
+</div>
+
+<br>
+<br>
+<br>
+
+
+	
+
+<div id="duplicates" class="image-container">
+    <!-- Дубликаты будут добавлены здесь -->
+</div>
+
+<script>
+function duplicateImage(checkbox) {
+    if (checkbox.checked) {
+        var imageItem = checkbox.parentNode.cloneNode(true); // Клонируем элемент-родитель чекбокса
+        imageItem.classList.add('duplicate-item'); // Добавляем класс, чтобы отличить от оригинального элемента
+        imageItem.querySelector('.checkbox').remove(); // Удаляем чекбокс у клонированного элемента
+        imageItem.querySelectorAll('span').forEach(function(span) {
+            span.remove(); // Удаляем все элементы <span>
+        });
+        document.getElementById('duplicates').appendChild(imageItem); // Добавляем клонированный элемент внизу
+    } else {
+        var originalItem = checkbox.parentNode; // Определяем исходный элемент
+        var duplicateItem = document.getElementById('duplicates').querySelector('.duplicate-item'); // Находим клон по классу
+        if (duplicateItem) {
+            duplicateItem.parentNode.removeChild(duplicateItem); // Удаляем только клон, если он существует
+        }
+    }
+}
+</script>
+</body>
+</html>
