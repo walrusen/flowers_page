@@ -37,8 +37,16 @@
   /* Медиа-запрос для мобильных устройств */
   @media screen and (max-width: 767px) {
     .image-item {
-      width: calc(50% - 20px); /* Два столбика в ширину */
+      width: calc(33.33% - 20px); /* Три столбика в ширину */
     }
+  }
+
+  .divider {
+    width: 100%; /* Ширина линии */
+    height: 2px; /* Толщина линии */
+    background-color: black; /* Цвет линии */
+    margin-top: 20px; /* Отступ сверху */
+    margin-bottom: 20px; /* Отступ снизу */
   }
 </style>
 </head>
@@ -272,7 +280,7 @@
         <span>150 тл/веточка</span>
       </div>
 </div>
-
+<div class="divider"></div>
 <div id="duplicates" class="image-container">
   <!-- Дубликаты будут добавлены здесь -->
 </div>
